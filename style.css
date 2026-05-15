@@ -1311,7 +1311,7 @@ button { cursor: pointer; font-family: inherit; border: none; outline: none; }
    IMPORTANT DATES SECTION
    ============================================================ */
 .important-dates {
-  background-image: url('images/green_backgrounf.png'); /* your image path */
+  background-image: url('green_backgrounf.png'); /* your image path */
   background-size: cover;       /* makes image fill the section */
   background-position: center;  /* centers image */
   background-repeat: no-repeat;
