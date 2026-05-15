@@ -1,0 +1,162 @@
+/* ============================================================
+   HOW IT WORKS — CARDS (COMPACT & SCALED)
+   ============================================================ */
+.steps-grid {
+  display: grid;
+  /* 6-column logic: 3+3 for top row, 2+2+2 for bottom row */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px; 
+  margin-top: 40px;
+  max-width: 1000px; /* Reduced container for a tighter look */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TOP ROW: Two equal cards (3 columns each) */
+.card-1 { 
+  grid-column: span 3; 
+  max-width: 480px; 
+}
+.card-2 { 
+  grid-column: span 3; 
+  max-width: 480px; 
+}
+
+/* BOTTOM ROW: Three equal cards (2 columns each) */
+.card-3 { grid-column: span 2; }
+.card-4 { grid-column: span 2; }
+.card-5 { grid-column: span 2; }
+
+/* Base card styling (Reduced Padding & Height) */
+.card {
+  border-radius: 24px;
+  padding: 24px; /* Scaled down from 40px */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px; /* Scaled down from 420px */
+  box-sizing: border-box;
+}
+
+/* Specific background colors */
+.card-1 { background: #F7F4ED; }
+.card-2 { background: #EAEEEF; }
+.card-3 { background: #EAEEEF; min-height: 260px; }
+.card-4 { background: #F7F4ED; min-height: 260px; }
+.card-5 { background: #A3C986; min-height: 260px; }
+
+/* Badge (Scaled down) */
+.badge {
+  width: 32px;
+  height: 32px;
+  background: #81D94B;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px; /* Scaled down from 40px */
+  font-weight: 800;
+  color: #000;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.badge-dark {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+/* Titles & descriptions (Scaled down) */
+.step-title {
+  font-family: var(--font-display);
+  font-size: 24px; /* Scaled down from 38px */
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-family: var(--font-display);
+  font-size: 14px; /* Scaled down from 16px */
+  color: var(--black);
+  line-height: 1.4;
+  max-width: 100%;
+}
+
+.step-title-light { color: #fff; }
+.step-desc-light  { color: rgba(255,255,255,0.8); }
+
+/* ---- Card 1: Log In (phone mockup scaled) ---- */
+.phone-shadow {
+  position: absolute;
+  width: 60%;
+  height: 45%;
+  background: #525151;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.phone {
+  position: absolute;
+  width: 55%;
+  height: 42%;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+/* ---- Card 2: Browse specialties (scaled items) ---- */
+.specialties-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specialty-item {
+  background: white;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 16px; /* Scaled down from 22px */
+  font-weight: 700;
+  color: var(--black);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ---- Card 5: Icon scaling ---- */
+.envelope-icon {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 60px; /* Scaled down from 80px */
+  opacity: 0.85;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 992px) {
+  .steps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card-1, .card-2, .card-3, .card-4 { grid-column: span 1; }
+  .card-5 { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .steps-grid { 
+    grid-template-columns: 1fr;
+  }
+  .card-1, .card-2, .card-3, .card-4, .card-5 { 
+    grid-column: span 1; 
+    max-width: 100%;
+    min-height: auto;
+  }
+  .step-title { font-size: 22px; }
+}
